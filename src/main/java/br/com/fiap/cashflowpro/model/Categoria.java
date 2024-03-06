@@ -1,3 +1,5 @@
+package br.com.fiap.cashflowpro.model;
+
 import java.util.Random;
 
 public record Categoria(Long id,String nome, String icone){
