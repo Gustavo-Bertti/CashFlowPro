@@ -1,5 +1,5 @@
 # CashFlowPro
-Uma API de controle de despesas pessoais 
+Uma API de controle de despesas pessoais.
 
 
 ## Endpoints
@@ -16,11 +16,12 @@ Uma API de controle de despesas pessoais
 ---
 
 ### Listar Todas
+
 `GET` /categoria
 
 Retorna um array com todas as categorias cadastradas.
 
-**Exemplo de resposta:**
+**Exemplo de Resposta** 
 
 ```js
 [
@@ -32,9 +33,9 @@ Retorna um array com todas as categorias cadastradas.
 ]
 ```
 
-**Códigos de Status**
+**Códigos de Status** 
 
-| código | descrição | 
+| código | descrição |
 |--------|-----------|
 |200|Dados retornados com sucesso
 
@@ -44,62 +45,64 @@ Retorna um array com todas as categorias cadastradas.
 
 `GET` /categoria/{id}
 
-Retorna os dados da categoria com o `id` informado.
+Retornar os dados da categoria com o `id` informado.
 
-**Exemplo de resposta:**
+**Exemplo de Resposta** 
 
 ```js
+
     {
         "id": 1,
         "nome": "Alimentação",
         "icone": "fast-food"
     }
-```
-**Códigos de Status**
 
-| código | descrição | 
+```
+
+**Códigos de Status** 
+
+| código | descrição |
 |--------|-----------|
 |200|Dados retornados com sucesso
 |404| Id da categoria não encontrado
 
----
+___
+
 
 ### Cadastrar Categoria
+
 `POST` /categoria
 
 Insere uma nova categoria.
 
-**Corpo da Requisição:**
+**Corpo da Requisição** 
 
-|campo|tipo|obrigatório|descrição 
-|-----|----|:-----------:|-----------|
-|nome|string| ✅ |Um nome curto para a categoria
+|campo|tipo|obrigatório|descrição
+|-----|----|:-----------:|---------
+|nome|string|✅|Um nome curto para a categoria
 |icone|string|❌|O nome do ícone conforme Material Icons
 
-```js
 
+```js
 {
     "nome": "Alimentação",
     "icone": "fast-food"
 }
-
 ```
 
-**Exemplo de resposta:**
+**Exemplo de Resposta** 
 
 ```js
-
 {
     "id": 1,
     "nome": "Alimentação",
     "icone": "fast-food"
 }
-
 ```
 
-**Códigos de Status**
+**Códigos de Status** 
 
-| código | descrição | 
+| código | descrição |
 |--------|-----------|
 |201|Categoria criada com sucesso
 |400|Erro de validação - verifique o corpo da requisição
@@ -110,55 +113,53 @@ Insere uma nova categoria.
 
 `DELETE` /categoria/{id}
 
-Apaga os dados da categoria com o `id` informado.
+Apaga a categoria com o `id` informado.
 
+**Códigos de Status** 
 
-
-**Códigos de Status**
-
-| código | descrição | 
+| código | descrição |
 |--------|-----------|
 |204|Categoria apagada com sucesso
 |404| Id da categoria não encontrado
 
----
+___
+
 ### Editar Categoria
 
 `PUT` /categoria/{id}
 
 Atualiza os dados da categoria com o `id` informado.
 
-|campo|tipo|obrigatório|descrição 
-|-----|----|:-----------:|-----------|
-|nome|string| ✅ |Um nome curto para a categoria
+**Corpo da Requisição** 
+
+|campo|tipo|obrigatório|descrição
+|-----|----|:-----------:|---------
+|nome|string|✅|Um nome curto para a categoria
 |icone|string|✅|O nome do ícone conforme Material Icons
 
-**Corpo da Requisição:**
-```js
 
+```js
 {
     "nome": "Alimentação",
     "icone": "fast-food"
 }
-
 ```
 
-**Exemplo de resposta:**
+**Exemplo de Resposta** 
 
 ```js
-
 {
     "id": 1,
     "nome": "Alimentação",
     "icone": "fast-food"
 }
-
 ```
 
-**Códigos de Status**
+**Códigos de Status** 
 
-| código | descrição | 
+| código | descrição |
 |--------|-----------|
 |200|Categoria atualizada com sucesso
-|400| A validação falhou - verifiue o corpo da requisição
+|400| A validação falhou - verifique o corpo da requisição
 |404| Id da categoria não encontrado
+
